@@ -1,0 +1,128 @@
+/* client/src/components/interview/InterviewCards.css */
+
+/* Base card style */
+.interview-card {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  border: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Feature Cards (Schedule & Start) */
+.feature-card {
+  align-items: center;
+  text-align: center;
+}
+.feature-icon {
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+.feature-card h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.25rem;
+}
+.feature-card p {
+  color: #6b7280;
+  flex-grow: 1;
+  margin-bottom: 1.5rem;
+}
+.next-interview-details {
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: #111827;
+}
+.next-interview-time {
+  color: #4F46E5 !important;
+  font-weight: 500;
+}
+
+
+/* Upcoming & Past Lists */
+.interview-list-section {
+  margin-bottom: 3rem;
+}
+.interview-list-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #111827;
+}
+
+/* Horizontal Scroll for Upcoming */
+.horizontal-scroll-container {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  padding-bottom: 1rem; /* Space for scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-color) #e5e7eb;
+}
+.horizontal-scroll-container::-webkit-scrollbar {
+  height: 8px;
+}
+.horizontal-scroll-container::-webkit-scrollbar-track {
+  background: #e5e7eb;
+  border-radius: 10px;
+}
+.horizontal-scroll-container::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+  border-radius: 10px;
+}
+.upcoming-card {
+  min-width: 280px;
+  flex-shrink: 0;
+}
+.upcoming-card h4 { margin: 0 0 0.25rem 0; }
+.upcoming-card p { margin: 0 0 1rem 0; color: #6b7280; }
+.upcoming-card .interview-time { font-weight: 500; color: #374151; }
+
+.card-actions {
+  margin-top: auto;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+.action-btn {
+  background: #f3f4f6;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  color: #6b7280;
+  transition: background-color 0.2s, color 0.2s;
+}
+.action-btn:hover {
+  background-color: #e5e7eb;
+}
+.delete-btn:hover {
+  color: #ef4444; /* red */
+}
+.reschedule-btn:hover {
+  color: #3b82f6; /* blue */
+}
+
+
+/* Past Interviews List */
+.past-interviews-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.past-interview-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+.past-interview-info h4 { margin: 0; font-size: 1.1rem; }
+.past-interview-info h4 span { font-weight: 400; color: #6b7280; }
+.past-interview-info p { margin: 0.25rem 0 0 0; font-size: 0.9rem; color: #6b7280; }

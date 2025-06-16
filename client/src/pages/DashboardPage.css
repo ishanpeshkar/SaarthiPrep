@@ -1,0 +1,53 @@
+/* client/src/pages/DashboardPage.css */
+.dashboard-page {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* ADDED: Styles for the new header section */
+.dashboard-header {
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #e5e7eb; /* Light gray border for separation */
+}
+
+.dashboard-welcome {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+}
+
+.dashboard-subtext {
+  font-size: 1rem;
+  color: #6b7280;
+  margin-top: 0.25rem;
+  margin-bottom: 0; /* Remove bottom margin as the parent div now has it */
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 2rem; /* CHANGED: Increased the gap for better spacing between cards */
+  margin-bottom: 2rem; /* ADDED: Pushes the banner down to prevent overlap */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+  .dashboard-card.full-width {
+    grid-column: span 1;
+  }
+}

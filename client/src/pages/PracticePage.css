@@ -1,0 +1,42 @@
+/* client/src/pages/PracticePage.css */
+.practice-page {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.practice-page-header {
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.practice-page-header h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+}
+
+.practice-page-header p {
+  font-size: 1rem;
+  color: #6b7280;
+  margin-top: 0.25rem;
+}
+
+.practice-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.practice-main-column, .practice-side-column {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media (max-width: 1024px) {
+  .practice-grid {
+    grid-template-columns: 1fr;
+  }
+}

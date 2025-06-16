@@ -1,0 +1,97 @@
+/* client/src/pages/MyProgressPage.css */
+.progress-page {
+  animation: fadeIn 0.5s ease-in-out;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.progress-page h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.progress-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.score-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .progress-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .progress-page {
+    padding: 1rem;
+  }
+  
+  .score-cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .score-cards > * {
+    flex: 1 1 300px;
+  }
+}
+
+@media (max-width: 640px) {
+  .progress-page h1 {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .score-cards {
+    flex-direction: column;
+  }
+  
+  .score-cards > * {
+    flex: 1 1 auto;
+  }
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Loading state */
+.loading-state {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  color: #6b7280;
+  font-size: 1.1rem;
+}
+
+/* Empty state */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  background-color: #f9fafb;
+  border-radius: 8px;
+  color: #6b7280;
+}
+
+.empty-state p {
+  margin-top: 0.5rem;
+  color: #9ca3af;
+}

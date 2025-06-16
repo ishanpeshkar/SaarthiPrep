@@ -1,0 +1,135 @@
+/* client/src/components/dashboard/DashboardCard.css */
+.dashboard-card {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  border: 1px solid #e5e7eb; /* ADDED: Subtle border for better definition */
+  height: 100%;
+  display: flex; /* ADDED: To help with vertical alignment if needed */
+  flex-direction: column; /* ADDED: Stacks card content vertically */
+}
+
+.dashboard-card h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #111827;
+  flex-shrink: 0; /* Prevents the title from shrinking */
+}
+
+.dashboard-card.full-width {
+  grid-column: span 2;
+}
+
+/* Interview Stats */
+.stat-number {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #4F46E5;
+  text-align: center;
+  margin: auto; /* ADDED: Helps to vertically center the number in the card */
+}
+
+/* Roadmap */
+.roadmap-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.roadmap-step {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem; /* CHANGED: Added padding on all sides */
+  border-bottom: 1px solid #f3f4f6;
+  border-radius: 8px; /* ADDED: Rounded corners for hover effect */
+  transition: background-color 0.2s ease-in-out; /* ADDED: Smooth transition */
+}
+.roadmap-step:hover {
+  background-color: #f9fafb; /* ADDED: Subtle hover effect */
+  cursor: pointer;
+}
+.roadmap-step:last-child {
+  border-bottom: none;
+}
+.roadmap-step .icon {
+  margin-right: 1rem;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+.roadmap-step .icon.completed {
+  color: #10B981;
+}
+.roadmap-step .icon.pending {
+  color: #9ca3af;
+}
+
+/* Progress Wheel */
+.progress-wheel-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto; /* ADDED: Helps to vertically center the wheel in the card */
+  flex-grow: 1; /* ADDED: Allows it to take up available space */
+}
+.progress-wheel {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+.progress-wheel::before {
+  content: '';
+  width: 120px;
+  height: 120px;
+  background: #fff;
+  border-radius: 50%;
+  grid-area: 1 / 1;
+}
+.progress-text {
+  grid-area: 1 / 1;
+  text-align: center;
+  z-index: 1;
+}
+.progress-text span {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111827;
+}
+.progress-text small {
+  display: block;
+  color: #6b7280;
+}
+.progress-summary {
+  text-align: center;
+  font-weight: 500;
+  margin-top: 1rem; /* ADDED: Space between wheel and text */
+}
+
+/* Upcoming Interviews Banner */
+@keyframes move {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.upcoming-interviews-banner {
+  grid-column: 1 / -1;
+  background-color: #111827;
+  color: #fff;
+  padding: 1rem 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border-radius: 8px;
+  /* REMOVED margin-top from here, it's now on the grid */
+}
+.moving-text {
+  display: inline-block;
+  animation: move 30s linear infinite;
+}
+.interview-item {
+  display: inline-block;
+  padding: 0 2rem;
+  font-size: 1rem;
+}
+.interview-item strong {
+  color: #10B981;
+}
